@@ -1,0 +1,93 @@
+
+.oneProductView{
+
+
+	::-webkit-input-placeholder {
+		color:#424242;
+	}
+
+	:-moz-placeholder{
+		color:#424242;
+	}
+
+	::-moz-placeholder{
+		color:#424242;
+	}
+
+	:-ms-input-placeholder{
+		color:#424242;
+	}
+
+	.card{
+
+		padding-bottom: 0px;
+	}
+
+    .productName{
+    	font-weight: 500;
+    	font-size: 1.5rem;
+    	margin-bottom: 20px;
+    	margin-top: 5px;
+    	line-height: 90%;
+    }
+
+    .desc{
+		  line-height: 150%;
+	    font-size: 1.2rem;
+	    color: #333333;
+	    line-height: 130%;
+	    font-weight: 400;
+	    text-transform: none;
+    }
+
+	.price {
+      color: #333333;
+      font-size: 1.25rem;
+      display: inline-block;
+      font-weight: 600;
+      margin-top: 10px;
+      margin-bottom: 0px;
+    }
+
+
+    .strike {
+      font-size: 1.15rem;
+      display: inline-block;
+      margin-top: 10px;
+      display: inline-block;
+      text-decoration: line-through;
+      color: #424242;
+      display: inline-block;
+ 	  margin-top: 11px;
+ 	  margin-bottom: -3px;
+ 	  text-indent: 0.5rem;
+    }
+
+    .card-content{
+    	margin-bottom: 0px;
+    }
+
+    .offerInput{
+
+
+    }
+
+    .offerButton{
+    	text-indent: 0.5rem;
+    	margin-top:5px;
+    }
+
+    .userLink{
+    	font-weight: 500;
+    	font-decoration: none;
+    	margin-bottom: -5px;
+    	
+
+    }
+
+   	a{
+	    &:hover{
+	      text-decoration: none;
+	    }
+	}
+}

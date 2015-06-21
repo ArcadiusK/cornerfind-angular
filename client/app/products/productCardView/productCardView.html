@@ -1,0 +1,36 @@
+<div class='productCard'>    
+    <div class="card-directive">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="card">
+          
+                    <a ng-href='products/{{product._id}}'>
+                        <div class="card-image">
+                            <img ng-src="{{product.photoUrls[0]}}">
+                        </div>
+
+                        <div class="card-action" id="productSubtitle">
+                            <h6 class="username"><a href='/users/{{product.userId.username}}'>by {{product.userId.username}}</a></h6>
+                            <h3 class="productName">{{product.name}}</h3>
+                            <h3 class="productName"><em>Condition:</em> {{product.condition}}</h3>
+                        </div>
+
+                        <div class="card-action" id="productDescInCard">
+                            <p class="description">{{product.desc}}</p>
+                            <h4 class='price'>{{product.price | currency:undefined:0}}</h4>
+                            <h4 class='strike'>{{product.retailPrice | currency:undefined:0}}</h4>
+                        </div>
+                    </a>
+
+                    <div class="card-action" id="productFavInCard">
+                        <div>
+                            <a><i class='mdi-action-favorite' id='favoriteIcon' ng-class="{favorited: favorited}" ng-click="toggleFavorite()"></i></a>
+                            <p id='productFavoriteDisplay'>{{likeText}}</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

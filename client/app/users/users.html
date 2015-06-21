@@ -1,0 +1,68 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+
+<div class='userview'>
+<div class="container" ng-controller="UsersCtrl" resizable>
+    <div class="row">
+        <div ng-class='isPinned(windowWidth)' class="col s12 l3 m12">
+            <div class="card #ea80fc purple accent-1">
+                <div class="card-content  grey-darken-4-text ">
+                    <div class='profile'>
+                        <img class="responsive-img circle profile" src="{{user.picture}}">
+                        <p class="card-title grey-text text-darken-4" id="username">{{user.username}} </p>
+                    </div>
+
+                    <p id='aboutMeTitle'>About me:</p>
+                    <p id='aboutMeText'>{{user.description}} </p>
+                    <p id='aboutMeBlog'>Blog: <a href='{{user.blog}}'> {{user.blog}}</a> </p>
+                    <br/>
+
+                        <table id='tableStats'>
+                            <thead id='theadintable'>
+                                <tr>
+                                    <th class='tableTitle' data-field="listing">Listings</th>
+                                    <th class='tableTitle' data-field="followers">Followers</th>
+                                    <th class='tableTitle' data-field="following">Following</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class='tableData'>{{user.listedProducts.length}}</td>
+                                    <td class='tableData'><a href='/users/{{user.username}}/followers'>{{user.followers.length}}</a></td>
+                                    <td class='tableData'><a href='/users/{{user.username}}/following'>{{user.following.length}}</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                    <div class="section followingButtons">
+                        <a ng-click='toggleFollow()' class="waves-effect btn blue lighten-2 grey-text text-darken-4 followText">
+                            <i class="mdi-action-favorite-outline"></i> &nbsp {{toggleText}}
+                            <i ng-show='followed' class='mdi-action-done'></i>
+                        </a>
+
+                        <a ng-click='showReviews()' class="waves-effect waves-purple btn blue lighten-2 grey-text text-darken-4 sellerFeedback"><i class="mdi-action-face-unlock"></i>&nbsp {{buttonText}}</a>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div ng-show='review' class="card pink lighten-3">
+                <div ng-repeat='review in reviews' class="card-content grey-text text-darken-4">
+                    <img class="responsive-img profile circle" src="{{review.reviewingUserId.picture}}">
+                    <p class="card-title grey-text text-darken-4" id="username">{{review.reviewingUserId.username}}</p>
+                    <p id='reviewText'>{{review.text}} </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row col s12 m6 l6 offset-l6">
+            <ul class="col l12 m12 s12 list-unstyled" ng-repeat="product in productList">
+                <product-card-view info="product"></product-card-view>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>

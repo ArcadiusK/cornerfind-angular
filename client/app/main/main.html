@@ -1,0 +1,70 @@
+
+<div ng-include="'components/navbar/navbar.html'" class="pink"></div>
+
+
+  <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="http://cornerfind.s3-website-us-west-2.amazonaws.com/1424057659479dark_front_bench.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>Welcome to Cornerfind!</h3>
+          <h5 class="light grey-text text-lighten-3">The marketplace for all baby products</h5>
+        </div>
+      </li>
+      <li>
+        <img src="http://cornerfind.s3-website-us-west-2.amazonaws.com/1424059325413dark_front_squares33.jpg"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Welcome to Cornerfind!</h3>
+          <h5 class="light grey-text text-lighten-3">The marketplace for clothes, toys, books, cribs, strollers...</h5>
+        </div>
+      </li>
+      <li>
+        <img src="http://cornerfind.s3-website-us-west-2.amazonaws.com/1424057894921dark_front_standing.jpg"> <!-- random image -->
+        <div class="caption right-align">
+          <h3>Welcome to Cornerfind!</h3>
+          <h5 class="light grey-text text-lighten-3">The marketplace for all baby products</h5>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+
+
+
+
+
+      <div ng-show='loggedin' class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+          <a class="btn-floating btn-large arc-was-red" ng-click="addProduct()">
+              <i class="large mdi-content-add"></i>
+          </a>
+      </div>
+
+
+<div class="container">
+    <div class="input-field col l8 m9 s12">
+        <form class="form" role="form" ng-submit='searchSubmit(searchText)'>
+            <i class="mdi-action-search prefix"></i>
+            <input type="text" ng-model="searchText" class="form-control btn-block" id="searchbox" ng-change="searchSubmit(searchText)" ng-model-options="{debounce:500}">
+            <label for="icon_prefix">Search</label>
+        </form>
+    </div>
+
+</div>
+
+
+    <div ng-repeat="product in productList">
+        <div ng-switch='' on='$index % 3'>
+            <div class="row" ng-switch-when="0">
+                <product-card-view info="productList[$index+0]" ng-show="productList[$index+0]" class="col l4 m6 s12 list-unstyled"></product-card-view>
+
+                <product-card-view info="productList[$index+1]" ng-show="productList[$index+1]" class="col l4 m6 s12 list-unstyled"></product-card-view>
+
+                <product-card-view info="productList[$index+2]" ng-show="productList[$index+2]" class="col l4 m6 s12 list-unstyled"></product-card-view>
+            </div>
+        </div>
+    </div>
+
+
+
+

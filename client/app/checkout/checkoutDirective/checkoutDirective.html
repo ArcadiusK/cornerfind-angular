@@ -1,0 +1,25 @@
+<form name="checkoutForm" ng-submit="checkout()">
+
+    <div class='form-group'>
+        <h5>Before putting in an offer, you must provide payment details. All offers expire after 24 hours, and your card <em>will not</em> be charged unless the seller accepts your bid within the 24 hour period.</h5>
+    </div>
+    <div class="form-panel">
+        <div class="row">
+            <div class="col s12">
+                <label>Credit Card Number</label>
+                <input type="text" class="form-control credit" ng-model="ccinfo.number" payments-validate="card" payments-format="card" payments-type-model="type" ng-required="true">
+                <br/>
+                <label>CVC</label>
+                <input type="text" class="form-control cvc" ng-model="ccinfo.cvc" payments-validate="cvc" payments-format="cvc" payments-type-model="type" ng-required="true">
+                <br/>
+                <label>Expiration</label>
+                <input type="text" class="form-control" ng-model="ccinfo.expiry" payments-validate="expiry" payments-format="expiry" ng-required="true" placeholder='mm/yy'>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group center-align">
+        <button type="submit" class="waves-effect waves-light btn blue darken-2" ng-disabled="checkoutForm.$invalid">Submit</button>
+        <button type="button" class="btn red darken-2"  ng-click='showtoken =!showtoken'>Cancel</button>
+    </div>
+</form>

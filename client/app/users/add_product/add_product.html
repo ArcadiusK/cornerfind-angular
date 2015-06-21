@@ -1,0 +1,126 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<!-- need to workout conflicts with this and sidenavs -->
+
+<script>
+$(document).ready(function() {
+    $('ul.tabs').tabs();
+});
+</script>
+
+<div class="container">
+    <div class='row'>
+        <div>
+            <h5><i class="mdi-action-loyalty"></i> Add a Product</h5>
+            <h6><i class='mdi-action-star-rate'></i> = Required Field</h4h6>
+        </div>
+          
+        <br></br>
+        <div class="row">
+          <form name='addProductForm' class="col l8 m7 s12">
+
+            <div class="row">
+                <div class="col l12 m12 s12">
+                  <label class="custom-file-upload btn btn-primary purple lighten-2">
+                        <input id="file-upload" type="file" capture='camera' accept="image/*" onchange="angular.element(this).scope().upload()"></input>
+                        <i class="mdi-image-add-to-photos"></i> Upload Photos
+                  </label>
+                </div>
+            </div>
+            
+            <div class="row"> 
+                <div class="col l12 m12 s12">
+                    <div class='col s12 m6 l6' ng-repeat='photo in newProduct.photoUrls'>
+                        <img class='uploadWidth' ng-src="{{photo}}"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col l12 m12 s12">
+                <input id="productName" name='name' type="text" class="validate" ng-model='newProduct.name' ng-required="true">
+                <label for="productName">Product Name *</label>
+
+                <span ng-show='addProductForm.name.$error.required && addProductForm.name.$touched'>Requires product name</span>
+
+              </div>
+            </div>
+            
+            <div class="row">  
+              <div class="input-field col l12 m12 s12">
+                <input id="description" name='desc' type="text" class="validate" ng-model="newProduct.description" ng-required='true'ui-validate="'$value.length > 10'">
+                <label for="description" >Desciption *</label>
+
+                 <span ng-show='addProductForm.desc.$error.required && addProductFor.desc.$touched'>Requires product description</span>
+                 <span ng-show='addProductForm.desc.$invalid && addProductForm.desc.$touched'>Description needs to be longer than 10 characters</span>
+
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="input-field col l12 m12 s12">
+                <button type='brand' ng-click='chooseBrand()' class='col s12 m12 l12 btn btn-primary light-blue'>{{brandButton}}</button>
+                <div ng-show='showBrands' class="row">
+                    <div class="col s12">
+                        <ul ng-repeat='brand in availableBrands' class="tabs">
+                            <li class="tab col s3"><a ng-click='selectBrand(brand.name)'>{{brand.name}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col l12 m12 s12">
+                    <button ng-click='chooseCategory()' class='col s12 m12 l12 btn btn-primary purple lighten-1'>{{categoryButton}} </button>
+                    <div ng-show='showCategories' class="row">
+                        <div class="col s12">
+                            <ul ng-repeat='category in availableCategories' class="tabs">
+                                <li class="tab col s3"><a ng-click='selectCategory(category.name)'>{{category.name}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col l12 m12 s12">
+                <button ng-click='chooseCondition()' class='col s12 m12 l12 btn btn-primary green lighten-1'>{{conditionButton}}</button>
+                    <div ng-show='showConditions' class="row">
+                        <div class="col s12">
+                            <ul ng-repeat='condition in availableConditions' class="tabs">
+                                <li class="tab col s3"><a ng-click='selectCondition(condition.name)'>{{condition.name}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">  
+              <div class="input-field col l6 m6 s6">
+                <i class='mdi-editor-attach-money prefix'></i>
+                <input id="retailPrice" name='retailPrice' type="tel" class="validate" ng-model="newProduct.retailPrice" ng-required="true" ng-pattern="/^[1-9]\d*$/">
+                <label for="retailPrice">Retail Price*</label>
+                <span ng-show='addProductForm.retailPrice.$error.pattern'>Prices must be a positive number</span> 
+                <span ng-show='addProductForm.retailPrice.$error.required && addProductForm.retailPrice.$touched'>Requires retail price</span>
+              </div>
+
+              <div class="input-field col l6 m6 s6">
+                <i class='mdi-editor-attach-money prefix'></i>
+                <input id="price"name='price' type="tel" class="validate" ng-model="newProduct.price" ng-required="true" ng-pattern="/^[1-9]\d*$/">
+                <label for="price">Selling Price*</label>
+
+                <span ng-show='addProductForm.price.$error.pattern && addProductForm.price.$touched'>Prices must be a positive number</span> 
+                <span ng-show='addProductForm.price.$error.required && addProductForm.price.$touched'>Requires retail price</span>
+
+              </div>
+            </div>
+
+            <div class="col s12">
+               <button ng-click='addProduct(newProduct)' class='btn btn-primary' ng-disabled="addProductForm.$invalid">Add Product</button>
+            </div>
+          </form>
+        </div>
+</div>

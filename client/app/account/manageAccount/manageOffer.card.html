@@ -1,0 +1,40 @@
+<div class="row" id='manageOfferCard'>
+    <div class="col s12 m11 l10 offset-l1 offset-m1">
+        <div class="card blue lighten-3">
+            <div class="card-content black-text"><!-- remove inline styles -->
+                <a ui-sref='user({name: offer.buyerId.username})' style="text-decoration:none; font-size: 1.5rem; "><span class="card-title black-text buyerName" >Buyer: {{offer.buyerId.name}} </span></a>
+                <ul>
+                    <p class='offerStatus'>Offer Status: {{offer.status}}</p>
+                    <h5 class='offerTitle'>Items in this offer:</h5>
+                    <li ng-repeat='product in offer.lineItems' class='offerItems'>
+                        {{product.name}} - Listed Price: {{product.originalPrice | currency}}
+                    </li>
+                </ul>
+                <div class='total'>Offer Total: {{offer.orderTotal | currency}}</div>
+            </div>
+            <div class="card-action">
+                <form ng-hide="status.status.indexOf(offer.status) > -1 " ng-submit="acceptOffer({offerId: offer._id, orderObj:offer})">
+                    <button ng-hide='accepted' class='btn' ng-click="submitButton()">Accept Offer</button>
+                    <!-- <button ng-hide='accepted' type='button' class='btn'>Reject button?</button> -->
+                </form>
+                <button ng-show= 'reviewable' class='btn' ng-click="review()">Leave a Review!</button>
+                <form ng-show='showReview' ng-submit="submitReview()">
+                    <div class="form-panel">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <p>How was your experience with {{offer.buyerId.name}}?</p>
+                                <input type="text" ng-model="reviewText" ng-required="true">
+                                <br/>
+                                <p>How many stars?</p>
+                                <span ng-repeat='star in starClasses track by $index'>
+                            <span class="glyphicon glyphicon-star" ng-class="star" ng-click="setStars($index+1)"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class='btn'>Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

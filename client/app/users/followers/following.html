@@ -1,0 +1,23 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+
+<div class="container" ng-controller="UsersCtrl" resizable>
+    <h4>{{user.username}}'s Following</h4>
+    <br>
+   <div class="col s12 m8 offset-m2 l6 offset-l3" ng-repeat='user in user.following'>
+        <div class="card-panel purple lighten-3 z-depth-1" id='followerCard'>
+          <div class="row valign-wrapper">
+            <div class="col s2">
+              <img src="{{user.picture}}" alt="" class="circle responsive-img profile"> <!-- notice the "circle" class -->
+            </div>
+            <div class="col s10">
+              <span class="black-text">
+                <h5>{{user.username}}</h5>
+                <h6>{{user.description}}</h6>
+                <h6>Blog: <a href='{{user.blog}}'>{{user.blog}}</a></h6>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

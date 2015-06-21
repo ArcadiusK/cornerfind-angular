@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="card-image waves-effect waves-block waves-light" style="width:100%">
+        <img class="activator" src="{{listing.photoUrls[0]}}">
+    </div>
+    <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">{{listing.name}} <i class="mdi-navigation-more-vert right"></i></span>
+        <p><a href="#">This is a link</a>
+        </p>
+    </div>
+
+
+    <!-- hidden stuff -->
+    <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Edit {{listing.name}} <i class="mdi-navigation-close right"></i></span>
+        <success-confirmation ng-show='submitted' text='edited {{listing.name}}'></success-confirmation ng-show='success'>
+        <div class='input-form' ng-show='!submitted'>
+            <form ng-submit="editProduct({listing:listing})">
+                
+                <input type='text' ng-model='listing.name'></input>
+                <label>Description</label>
+                <textarea ng-model='listing.desc'></textarea>
+                
+                <div class='col s6 m6 l6'>
+	                <label>Price</label>
+	                <input type="number" ng-model="listing.price"></input>
+                </div>
+                <div class='col s6 m6 l6'>
+                	Placeholder
+                </div>
+                <button class='btn purple accent-3 waves-effect' ng-click='submitButton()'>Submit Changes</button>
+                <button type='button' class='btn red accent-4'>Cancel</button>
+                <!-- how can i make the cancel button wipe the changes that were made? -->
+
+
+
+            </form>
+        </div>
+    </div>
+
+
+
+</div>

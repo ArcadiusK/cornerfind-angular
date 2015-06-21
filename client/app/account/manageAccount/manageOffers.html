@@ -1,0 +1,14 @@
+<div ng-hide="offers.length">
+    <h4>There are no pending offers on your listings</h4>
+</div>
+
+
+<manage-offer-view ng-hide='showModal' currentUser='currentUser' status='status' info="offer" accept-offer="acceptOffer(offerId,orderObj)" ng-repeat='offer in offers' stripe-result='stripeResult'></manage-offer-view>
+
+<div>
+    <script type="text/ng-template" id="templateId">
+        	<h3 style="text-align: center; color: white;">Your order is processing</h3>
+        	<p style="text-align: center; color: white;">Please hold on a few seconds</p>
+        </div>
+    </script>
+</div>

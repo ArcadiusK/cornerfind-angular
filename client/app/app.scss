@@ -1,0 +1,67 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$fa-font-path: "/bower_components/font-awesome/fonts";
+
+@import 'bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+@import 'materialize/sass/materialize';
+@import 'font-awesome/scss/font-awesome';
+
+/**
+ * App-wide Styles
+ */
+
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+
+html{
+    font-size: 14px !important;
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.col{
+	-webkit-transition: all 0.0s !important;
+    -moz-transition: all 0.0s !important;
+    -o-transition: all 0.0s !important;
+    -ms-transition: all 0.0s !important;
+    transition: all 0.0s !important;
+}
+
+
+// Component styles are injected through grunt
+// injector
+@import 'about/about.scss';
+@import 'account/login/login.scss';
+@import 'account/manageAccount/manageAccount.scss';
+@import 'account/manageAccount/manageOffer.scss';
+@import 'admin/admin.scss';
+@import 'chat/chat.scss';
+@import 'checkout/checkoutDirective/checkoutDirective.scss';
+@import 'easypost/easypost.scss';
+@import 'main/main.scss';
+@import 'offer/offer.scss';
+@import 'products/confirmOrder.scss';
+@import 'products/oneProductView/oneProductView.scss';
+@import 'products/productCardView/productCardView.scss';
+@import 'products/products.scss';
+@import 'profile/profile.scss';
+@import 'review/review.scss';
+@import 'sidenav/brandSidenav.scss';
+@import 'sidenav/categorySidenav.scss';
+@import 'sidenav/conditionSidenav.scss';
+@import 'sidenav/navbars.scss';
+@import 'users/add_product/add_product.scss';
+@import 'users/followers/follow.scss';
+@import 'users/users.scss';
+@import 'footer/_footer.scss';
+@import 'modal/modal.scss';
+@import 'navbar/navbar.scss';
+// endinjector

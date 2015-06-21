@@ -1,0 +1,11 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class='container'>
+	<h1>Your Offers:</h1>
+  <div class='row'>
+ 
+      <your-offer-view class="col s12 m12 l6" offer="offer" modify-offer="modifyOffer(offer)" cancel-offer='cancelOffer(offerId)' toggle-form="toggleCard()" ng-repeat='offer in offers'></your-offer-view>
+
+  </div>
+
+</div>

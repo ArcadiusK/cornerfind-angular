@@ -1,0 +1,62 @@
+<div class="container confirm-order">
+    <div ng-hide='submitted' class="row center-align">
+        <div>
+            <h3>Confirm Your Offer</h3>
+        </div>
+
+        <div class="col s12 m12 l12">
+
+            <div class="col s12 center-align">
+                <h5>Product Information</h5>
+            </div>
+            <div class="col s12 center-align">
+                <div class="col s12 center-align">{{order.lineItems[0].name}}</div>
+
+                <div class="col s12 center-align">Offer: {{order.lineItems[0].purchasePrice | currency}}</div>
+
+
+
+            </div>
+            <button ng-click="emitter()" ui-sref='products.oneProductView({id: prodId})' class='btn red darken-2 col s12 center-align '>Modify</button>
+            <hr class='col s12'>
+
+
+            <div class="col s12 center-align">
+                <h5>Payment Information</h5>
+            </div>
+            <div class="col s12 center-align">
+                <div class="col s12 center-align">Card Type: {{cardInfo.cardType}} </div>
+                <div class="col s12 center-align">Last Four Digits: {{cardInfo.last4}}</div>
+
+
+            </div>
+            <button ng-click="emitter()" ui-sref='products.stripeInfo({id: prodId})' class='btn red darken-2 col s12 center-align'>Modify</button>
+            <hr class='col s12'>
+
+            <div class="col s12 center-align">
+                <h5>Shipping Address</h5>
+            </div>
+            <div class="col s12 center-align">
+                <div class="col s12 center-align">{{shippingAddress.name}} </div>
+                <div class="col s12 center-align">{{shippingAddress.street1}} {{shippingAddress.street2}} </div>
+                <div class="col s12 center-align">{{shippingAddress.city}} {{shippingAddress.state}} {{shippingAddress.zip}}</div>
+
+
+
+            </div>
+            <button ng-click="emitter()" ui-sref='products.addressForm({id:prodId})' class='btn red darken-2 col s12 center-align'>Modify</button>
+            <hr class='col s12'>
+
+
+            <button id='submit' ng-disabled="clicked" ng-click="submitOrder()" class='col s12 center-align btn'>Submit Offer</button>
+
+        </div>
+
+    </div>
+
+    <div class="row" ng-show='submitted'>
+        <div class="col s12">
+            <h5>Sucess! Your offer has been submitted, and the seller now has 24 hours to respond. If your offer is accepted, your card will be charged {{order.lineItems[0].purchasePrice | currency}} and you will receive a confirmation email. Good luck!</h5> <!-- {{orderId}} -->
+        </div>
+    </div>
+</div>

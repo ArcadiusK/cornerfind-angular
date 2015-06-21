@@ -1,0 +1,101 @@
+
+
+.productCard{
+
+
+
+  #productDescInCard{
+    padding-top: 8px;
+    padding-bottom: 5px;
+    margin-top: 0px ;
+    margin-bottom: -20px ;
+    
+    .description{
+      line-height: 150%;
+      font-size: 1rem;
+      color: #333333;
+      font-weight: 400;
+      text-transform: none;
+    }
+
+    .price {
+      color: #333333;
+      font-size: 1.25rem;
+      display: inline-block;
+      font-weight: 600;
+    }
+
+    .strike {
+      display: inline-block;
+      text-decoration: line-through;
+      font-size: 1.05rem;
+      color: #9e9e9e;
+      display: inline-block;
+      text-indent: 0.5rem;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      vertical-align: -2%;
+    }
+
+  }
+
+
+  #productSubtitle{
+    padding-top: 0px ;
+    padding-bottom: 5px ;
+    border-top: 0px ;
+    margin-top: -20px ;
+
+    .username{
+      color: #9e9e9e ;
+      margin-bottom: 0px ;
+      text-indent: -1.45rem;
+    }
+    .productName{
+      font-size: 1.1rem ;
+      color: #333333 ;
+      margin-top: -5px ;
+      margin-bottom: -10px ;
+      font-weight: 500;
+    }
+  }
+
+  #productFavInCard{
+    padding-top: 5px ;
+    padding-bottom: 5px ;
+    margin-top: 0px ;
+  }
+
+
+  #favoriteIcon{
+    display: inline-block ;
+    font-size: 1.8rem ;
+    color: #ffcdd2 ;
+
+  }
+
+  .favorited {
+    color: #e53935 !important; 
+  }
+
+
+  #productFavoriteDisplay{
+    margin-top: 0px ;
+    margin-bottom: 0px ;
+    display: inline-block ;
+    vertical-align: 35% ;
+    font-size: 1.0rem;
+    text-indent: -0.5rem;
+    font-weight: 475;
+  }
+
+  a{
+    &:hover{
+      text-decoration: none !important;
+    }
+  }
+
+  .card-image{
+    display:inline-block !important;
+  }
+}

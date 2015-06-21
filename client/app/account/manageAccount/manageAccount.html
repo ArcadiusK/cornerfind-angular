@@ -1,0 +1,25 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div resizable class='container'>
+
+
+    <div class='row'>
+
+        <div class='col s12 m3 l3'>
+            <a class='col s12' ui-sref-active='active' id='my-collection' ui-sref='account.profile'>Account Info</a>
+             <a class='col s12' ui-sref-active='active' id='my-collection' ui-sref='account.address'>Manage Address</a>
+            <a class='col s12 ' ng-class="{active: isActive('account.settings')}" id='my-collection' ui-sref="account.settings">Change Password</a>
+            <a class='col s12 ' ng-class="{active: isActive('account.listings')}" id='my-collection' ui-sref="account.listings">View Listings</a>
+            <a class='col s12 ' ng-class="{active: isActive('account.offers')}" id='my-collection' ui-sref="account.offers">View Orders</a>
+            <a class='col s12 ' ng-class="{active: isActive('account.balance')}" id='my-collection' ui-sref="account.balance">View Balance</a>
+        </div>
+        <div class='col s1 m1 l1'></div>
+
+
+
+        <div class='col s12 m8 l8 offset-l1 offset-m1' ui-view>{{hello}} {{currentUser.name}}! Manage your account via the tabs on the left.</div>
+
+
+    </div>
+
+</div>

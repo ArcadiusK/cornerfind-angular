@@ -1,0 +1,90 @@
+
+<div class="row chat section">
+      <div class="col l12 s12" ng-controller="ChatCtrl">
+          <div class="card-panel pink lighten-5"  ng-repeat="chat in chatList">
+            <h3 id='chatUsername'>{{chat.username}}</h3>
+            <h4 id="chatText">{{chat.textLine}}</h4>
+        </div>
+      </div>
+</div>
+
+<div ng-controller="ChatCtrl" ng-show="isLoggedIn()">
+ <div class="card-panel blue lighten-4">
+  <form ng-submit="addChat(newChatText)">
+
+    <div class="input-field">
+
+      <i class="mdi-editor-mode-edit prefix"></i>
+      <textarea id="icon_prefix2" class="materialize-textarea" ng-model="newChatText"></textarea>
+      <label for="icon_prefix2">New Message</label>
+
+      <button type="submit" class="btn btn-primary center-align">Submit</button>
+
+    </div>
+  </form>
+  </div>
+</div>
+<!--
+ <input type='text' id='nameInput' placeholder='Name' >
+    <input type='text' id='messageInput' placeholder='Message'>
+
+    <script>
+    var myDataRef = new Firebase('https://cornerfind.firebaseio.com/');
+      $('#messageInput').keypress(function (e) {
+        if (e.keyCode == 13) {
+          var name = $('#nameInput').val();
+          var text = $('#messageInput').val();
+          console.log("name: ", name)
+          myDataRef.set('User ' + name + ' says ' + text);
+          $('#messageInput').val('');
+        }
+      });
+
+      myDataRef.on('child_added', function(snapshot) {
+        var message = snapshot.val();
+        displayChatMessage(message.name, message.text);
+      });
+
+ function displayChatMessage(name, text) {
+        $('<div/>').text(text).prepend($('<em/>').text(name+': ')).appendTo($('#messagesDiv'));
+        $('#messagesDiv')[0].scrollTop = $('#messagesDiv')[0].scrollHeight;
+      };
+    </script>
+
+<div id="#messagesDiv" >
+</div>
+ -->
+
+
+
+
+
+
+
+
+<!--
+<div class="container">
+  <div class="row">
+    <div class="col l12">
+      <h1 class="page-header">Chat</h1>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="chat in chatlist">
+        <li><a href="#">{{chat.username}}</a></li>
+        <li><a href="#">{{chat.textLine}}</a></li>
+      </ul>
+    </div>
+  </div> -->
+
+
+ <!--  <form class="chat-form">
+      <label>Comment</label>
+      <p class="input-group">
+        <input type="text" class="form-control" placeholder="Your Name:" ng-model="newChat.name">
+        <input type="text" class="form-control" placeholder="Comment here..." ng-model="newChat.text">
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-primary" ng-click="addchat({newChat:newChat})">Add New</button>
+        </span>
+
+      </p>
+  </form>
+
+</div> -->

@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col s12 m12 l12">
+
+        <!-- Main Card Content -->
+        <div class="card blue lighten-3" ng-hide="isBeingModified">
+
+            <div class="card-content black-text">
+                <span class="card-title black-text">Seller: {{::offer.sellerId.name}}</span>
+                <ul>
+                    <h5>Items in this offer:</h5>
+                    <li ng-repeat='product in offer.lineItems'>
+                        {{product.name}} - Listed Price: {{::product.productId.price | currency}}
+                    </li>
+                </ul>
+                <hr>
+                <div>Offer Total: {{offer.orderTotal | currency}}</div>
+                <div>Offer Status: {{offer.status}}</div>
+            </div>
+
+            <div ng-hide='statusCheck.status.indexOf(offer.status) > -1' class="card-action" id="offer-card-action">
+                <button class='col s6 btn' ng-click="isBeingModified=true">Modify Offer</button>
+                <button type='button' class=' col s6 btn red darken-2' ng-click="cancelOffer({offerId: offer})">Cancel Offer</button>
+            </div>
+
+            <button ng-show="statusCheck.status.indexOf(offer.status) > -1 && !offer.reviewed &&!finished" class='btn' ng-click="review()">Leave a Review!</button>
+            <form ng-show='showReview && !offer.reviewed && !finished' ng-submit="submitReview()">
+                <div class="form-panel">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <p>How was your experience with {{offer.buyerId.name}}?</p>
+                            <input type="text" ng-model="reviewText" ng-required="true">
+                            <br/>
+                            <p>How many stars?</p>
+                            <span ng-repeat='star in starClasses track by $index'>
+                            <span class="glyphicon glyphicon-star" ng-class="star" ng-click="setStars($index+1)"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <button type='submit' class='btn'>Submit</button>
+            </form>
+
+
+
+        </div>
+        <!-- End Main Cart Content -->
+
+        <!-- Modify Order Form -->
+        <div class="card  blue lighten-3" ng-show="isBeingModified">
+            <div class="card-content black-text">
+                <span class="card-title black-text">Change Your Offer</span>
+                <ul>
+                    <h3>Items in this offer:</h3>
+                    <li ng-repeat='product in offer.lineItems'>
+                        {{::product.productId.name}} - Listed Price: {{::product.productId.price | currency}}
+                    </li>
+                </ul>
+                <hr style='border-top: black;'>
+            </div>
+            <div class="card-action" id="offer-card-action">
+                <form name='offerForm'>
+                    <div class="input-field col s12">
+                        <!--validation is hardcoded to orders with 1 item-->
+                        <i class='tiny mdi-editor-attach-money prefix' style="color:black;"></i>
+                        <input id="modify-input" name='offerCtrl' class='black-text validate' type='text' placeholder='00' ng-model='offer.orderTotal' ui-validate="'$value <= offer.lineItems[0].productId.price && $value>0 && $value %1 ===0 '"></input>
+                        <div ng-show="offerForm.$invalid && offerForm.offerCtrl.$touched" class="col s12 center-align">Offers must be whole dollar values less than or equal to the listed price.</div>
+                    </div>
+
+                    <button ng-disabled='!offerForm.$valid' class='btn col s6' ng-click="modifyOffer({offer: offer}); isBeingModified=false">Submit</button>
+                </form>
+                <button type='button' ng-click="isBeingModified=false" class='btn red darken-2 col s6'>Don't Modify</button>
+
+            </div>
+        </div>
+        <!-- End Modify Form -->
+    </div>
+</div>

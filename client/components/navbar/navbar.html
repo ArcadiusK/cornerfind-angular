@@ -1,0 +1,103 @@
+<div resizable class="navbar navbar-default navbar-static-top purple accent-1"  ng-controller="NavbarCtrl">
+ <!--  <div class="container"> -->
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" ng-click="isCollapsed = !isCollapsed">
+        <span class="navbar-text sr-only" id="whiten">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand" id="whiten"><img src="assets/images/logo_cornerfind.png" width="42"/>&nbsp <div id='appname'>Cornerfind</div></a>
+    </div>
+    <div collapse="isCollapsed" class="navbar-collapse collapse" id="navbar-main">
+      <ul class="nav navbar-nav">
+        <!-- keeping below line for ng-class reference
+        <li ng-repeat="item in menu" ng-class="{active: isActive(item.link)}">
+        </li>
+        -->
+
+        <!--dropdowns-->
+
+        <!-- CATEGORY DROPDOWN -->
+        <li ng-controller='DropdownCtrl'>
+          <div ng-if="!smallerThan768()" class="btn-group" dropdown is-open="status.openCategories">
+              <a  class ="whiten" id='custom-dropdown' ng-mouseover='toggleCategories($event)' ng-mouseleave='toggleCategories($event)' dropdown-toggle ng-disabled="disabled">
+                Categories <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu"  ng-mouseleave='toggleCategories($event)'>
+                <li  ng-repeat='category in categoryList'><a ng-click='categoryEmit(category.name)' ng-click='categoryEmit(category.name)'>{{category.name}}</a></li>
+              </ul>
+            </div>
+
+            <div ng-if="smallerThan768()" class="btn-group" ng-click='toggleCategories()' dropdown is-open="status.openCategories">
+              <a  class ="whiten" id='custom-dropdown'  dropdown-toggle ng-disabled="disabled">
+                Categories <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li  ng-repeat='category in categoryList'><a ng-click='categoryEmit(category.name)'>{{category.name}}</a></li>
+              </ul>
+            </div>
+
+        </li>
+
+
+        <!-- BRAND DROPDOWN -->
+        <li ng-controller='DropdownCtrl'>
+          <div ng-if='!smallerThan768()' class="btn-group" dropdown is-open="status.openBrands">
+            <a  class='whiten' id='custom-dropdown' ng-mouseover='toggleBrands($event)' ng-mouseleave='toggleBrands($event)' dropdown-toggle ng-disabled="disabled">
+              Brands <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu" ng-mouseleave='toggleBrands($event)'>
+              <li ng-repeat='brand in brandList'><a ng-click='brandEmit(brand.name)'>{{brand.name}}</a></li>
+            </ul>
+          </div>
+
+          <div ng-if="smallerThan768()" class="btn-group" ng-click='toggleCategories()' dropdown is-open="status.openBrands">
+            <a  class ="whiten" id='custom-dropdown'  dropdown-toggle ng-disabled="disabled">
+              Brands <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li  ng-repeat='brand in brandList'><a ng-click='brandEmit(brand.name)'>{{brand.name}}</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <!-- Gender DROPDOWN -->
+        <li ng-controller='DropdownCtrl'>
+          <div ng-if='!smallerThan768()' class="btn-group" dropdown is-open="status.openGenders">
+            <a  class='whiten' id='custom-dropdown' ng-mouseover='toggleGenders($event)' ng-mouseleave='toggleGenders($event)' dropdown-toggle ng-disabled="disabled">
+              Gender <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu" ng-mouseleave='toggleGenders($event)'>
+              <li ng-repeat='gender in genderList'><a ng-click='genderEmit(gender)'>{{gender}}</a></li>
+            </ul>
+          </div>
+
+          <div ng-if="smallerThan768()" class="btn-group" ng-click='toggleGenders()' dropdown is-open="status.openGenders">
+            <a  class ="whiten" id='custom-dropdown'  dropdown-toggle ng-disabled="disabled">
+              Gender <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li  ng-repeat='gender in genderList'><a ng-click='genderEmit(gender)'>{{gender}}</a></li>
+            </ul>
+          </div>
+        </li>
+
+
+        <!--end dropdowns-->
+
+        <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}"><a href="/admin">Admin</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}"><a ui-sref="signup" id='whiten'>Sign up</a></li>
+        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/login')}"><a ui-sref="login" id='whiten'>Login</a></li>
+        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><p id='whiten' class="navbar-text">Hi {{currentUser.name}}!</p> </li>
+        <!-- <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a class='whiten' id='whiten' ui-sref="offer">Your Offers</a></li> -->
+        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}"><a ui-sref='account'><span class="glyphicon glyphicon-cog whiten"></span></a></li>
+        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a class='whiten' id='whiten' href="" ng-click="logout()">Logout</a></li>
+      </ul>
+    </div>
+<!--   </div> -->
+</div>

@@ -1,0 +1,95 @@
+
+.userview{
+	.profile {
+	  height: 50px;
+	  width: 50px;
+	  display: inline;
+	  margin:0 auto;
+	}
+
+	#username {
+		margin-left: 15px;
+		display: inline-block;
+		vertical-align: -18%;
+		font-weight: 500;
+		font-size: 2rem;
+	}
+
+	#aboutMeTitle {
+		color: #212121 ;
+		margin-top: 15px;
+		font-size: 1.2rem;
+		font-weight: 500;
+	}
+
+	#aboutMeText{
+		line-height: 150%;
+	    font-size: 1.0rem;
+	    line-height: 130%;
+	    font-weight: 400;
+	    margin-top: 8px;
+
+	}
+	
+	#aboutMeBlog{
+		line-height: 150%;
+	    font-size: 1.0rem;
+	    line-height: 130%;
+	    font-weight: 400;
+	    margin-top: 25px;
+
+	    a{
+			color: #1e88e5;
+			text-decoration: none;
+			font-weight: 650;
+		}
+    }
+
+    .tableTitle{
+    	padding-bottom: 2px;
+    	text-align: center;
+    	border-bottom: none;
+    }
+
+    #theadintable {
+    	border-bottom: none;
+	}
+
+    .tableData{
+		text-align: center;
+		font-weight: 700;
+		font-size: 1.2rem;
+		color: #1e88e5;
+		padding-top: 5px;
+
+		a{
+			text-align: center;
+			color: #1e88e5;
+			text-decoration: none;
+			font-weight: 700;
+			font-size: 1.2rem;
+		}
+
+    }
+
+    .followText{
+    	vertical-align: top;
+    }
+
+    .sellerFeedback{
+		vertical-align: top;
+    }
+
+    .followingButtons{
+    	margin-bottom: 0px;
+    	padding-bottom: 0px;
+    }
+
+    #reviewText{
+		line-height: 150%;
+	    font-size: 1.2rem;
+	    line-height: 130%;
+	    font-weight: 400;
+	    margin-top: 15px;    	
+    }
+}

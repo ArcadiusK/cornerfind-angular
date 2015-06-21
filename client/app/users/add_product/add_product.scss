@@ -1,0 +1,26 @@
+form > div > label {
+	font-size: 2rem;
+	/*Why won't text align take effect? anything else works A: _forms.scss*/
+}
+
+#text-input {
+	font-size: 2rem;
+}
+
+#labels {
+	text-align: left;
+}
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.uploadWidth {
+
+	width: 100%;
+
+}

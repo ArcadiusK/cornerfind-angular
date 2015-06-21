@@ -1,0 +1,14 @@
+<div layout="row">
+  <md-sidenav class='col l4 m6 s8' md-component-id='brands' class="md-sidenav-left">
+    <h1>Brands</h1>
+  <ul >
+    <li ng-click="onItemClick({selection: item})" ng-repeat='item in selection'>{{item.name}}</li>
+  </ul>
+  </md-sidenav>
+  <md-content>
+    <md-button type='button' class='btn purple' ng-click="openLeftMenu()">
+      {{buttonText}}
+    </md-button>
+
+  </md-content>
+</div>

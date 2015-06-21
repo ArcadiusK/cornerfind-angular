@@ -1,0 +1,15 @@
+md-sidenav {
+
+	li{
+		border-bottom: 1px solid black;
+		font-size: 20px;
+		padding: 0 0 10px 5px;
+		&:hover{
+		background-color:rgba(98,0,234,0.1);
+		}	
+
+	}
+
+
+}
+

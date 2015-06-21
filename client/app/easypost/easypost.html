@@ -1,0 +1,67 @@
+<div class="easy-post">
+    <div class="row" ng-controller='EasypostCtrl'>
+        <div class='col s12'>
+            <div ng-show='badAddress' class="error">
+                <h4>Error Verifying Address:</h4>{{errorMessage}} Please re-renter your information.</div>
+        </div>
+        <form class="col s12" ng-submit='saveAddress(address)' ng-model='address'>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="first_name" type="text" class="validate" ng-model='address.name'>
+                    <label class='active' for="first_name">Full Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="address1" type="text" class="validate" ng-model='address.street1'>
+                    <label class='active' for="address1">Address Line 1 (Street address, P.O. box, company name, etc.)</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="address2" type="text" class="validate" ng-model='address.street2'>
+                    <label class='active' for="address2">Address Line 2 (Apartment., suite, unit, floor, etc.)</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s7">
+                    <input id="city" type="text" class="validate" ng-model='address.city'>
+                    <label class='active' for="city">City</label>
+                </div>
+                <div class="input-field col s2">
+                    <input id="password" type="text" class="validate" ng-model='address.state'>
+                    <label class='active' for="password">State</label>
+                </div>
+                <div class="input-field col s3">
+                    <input id="zipcode" type="text" class="validate" ng-model='address.zip'>
+                    <label class='active' for="zipcode">Zip</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="phone" type="text" class="validate" ng-model='address.phone'>
+                    <label class='active' for="phone">Phone Number</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="email" type="email" class="validate" ng-model='address.email'>
+                    <label class='active' for="email">Email</label>
+                </div>
+                <!-- <div class="input-field col s6"> -->
+                <button class="col s5 btn waves-effect waves-light red " type="button" name="action" ng-class='buttonColor' ng-click='resetAddy()'>Clear Form
+                </button>
+                <!-- </div> -->
+                <!-- <div class="input-field col s6"> -->
+                <button class=" col s5 btn waves-effect waves-light right" type="submit" name="action" ng-class='buttonColor'>Confirm
+                </button>
+                <!-- </div> -->
+
+            </div>
+
+        </form>
+
+    </div>
+</div>

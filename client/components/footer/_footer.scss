@@ -1,0 +1,15 @@
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -262px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  height: 241px;
+}
+.site-footer {
+ // background: orange;
+}

@@ -1,0 +1,12 @@
+<div class="row">
+
+  	<h1>LISTINGS VIEW {{currentUser.name}}</h1>
+  	
+  	<div class='col s12 m12 l6' ng-repeat="listing in usersListings">
+  	<!-- need to get offers on this product and display-->
+  	<manage-listing-card info='listing' edit-product="submitProductChanges(listing)"></manage-listing-card>
+
+  	</div>
+
+  </div>
+</div>
