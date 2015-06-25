@@ -119,7 +119,7 @@ User.find({}).remove(function() {
             settings: '', //will need to define later. Nice to have.
             following: [],
             followers: [],
-            phoneNumber: '+16319883287',
+            phoneNumber: '5555555555',
             billing: {}
         },
 
@@ -144,7 +144,7 @@ User.find({}).remove(function() {
             settings: '', //will need to define later. Nice to have.
             following: [],
             followers: [],
-            phoneNumber: '+16466444312',
+            phoneNumber: '5555555555',
             billing: {}
         }, {
             name: 'Justin Cohen',
@@ -167,7 +167,7 @@ User.find({}).remove(function() {
             settings: '', //will need to define later. Nice to have.
             following: [],
             followers: [],
-            phoneNumber: '+19145890035',
+            phoneNumber: '5555555555',
             billing: {}
         }, {
             name: 'Mitsuaki Uchimoto',
@@ -190,7 +190,7 @@ User.find({}).remove(function() {
             settings: '', //will need to define later. Nice to have.
             following: [],
             followers: [],
-            phoneNumber: '+12016605762',
+            phoneNumber: '5555555555',
             billing: {}
         },
         function() {
