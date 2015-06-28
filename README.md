@@ -1,1 +1,2 @@
-# Web project built witn Angular.js MongoDB Express.js and Node.js
+# Web app built with fullstack javascript 
+# Angular.js,  NodeJS, Mongo DB Express.js
