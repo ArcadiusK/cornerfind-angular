@@ -177,7 +177,7 @@ User.find({}).remove(function() {
             hashedPassword: '',
             role: 'user',
             picture: 'http://cornerfind.s3-website-us-west-2.amazonaws.com/1424062016133photo_mitsu.jpg',
-            blog: 'www.codekarma.io',
+            blog: '',
             description: 'Dad with 5 kids',
             provider: 'local',
             salt: '',
