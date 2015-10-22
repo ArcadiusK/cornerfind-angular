@@ -1,3 +1,3 @@
 ##• E-commerce website to buy and sell (new and used) baby related products (clothes, cribs, strollers, books etc)
-#• Built with fullstack javascript Angular.js, NodeJS, MongoDB, Express.js
-#• To run type node start in terminal
+###• Built with fullstack javascript Angular.js, NodeJS, MongoDB, Express.js
+###• To run type node start in terminal
