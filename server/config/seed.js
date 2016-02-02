@@ -301,7 +301,7 @@ User.find({}).remove(function() {
                                         qty: 1,
                                         name: "Two Dolls",
                                         desc: "Two Dolls white together",
-                                        photoUrls: ["http://babyurprecious.com/wp-content/uploads/2014/06/Baby-UR-Precious-BURP-Doll-portfolio.jpg"],
+                                        photoUrls: ["http://www.allgraphics123.com/wp-content/uploads/2015/07/Two-Dolls-Wearing-Summer-Hats.jpg"],
                                         condition: "Average", //from conditions collection
                                         available: true,
                                         price: 61.00,
