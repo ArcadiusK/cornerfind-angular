@@ -302,7 +302,7 @@ User.find({}).remove(function() {
                                         name: "Two Dolls",
                                         desc: "Two Dolls white together",
                                         photoUrls: ["http://www.allgraphics123.com/wp-content/uploads/2015/07/Two-Dolls-Wearing-Summer-Hats.jpg"],
-                                        condition: "Average", //from conditions collection
+                                        condition: "Brand New", //from conditions collection
                                         available: true,
                                         price: 61.00,
                                         brand: "Uniqlo",
