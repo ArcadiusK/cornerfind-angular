@@ -569,14 +569,7 @@ User.find({}).remove(function() {
                                                                         console.log("finished seeding all: addresses")
                                                                     });
                                                             });
-
-
-
-
                                                         });
-
-
-
                                                     });
                                                 });
                                             });
