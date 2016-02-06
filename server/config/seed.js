@@ -212,7 +212,6 @@ User.find({}).remove(function() {
                         console.log("seed.js - could not find user2")
                         return handleError(err);
                     }
-
                     var queryUser3 = User.where({
                         username: 'justincohen'
                     });
@@ -221,8 +220,6 @@ User.find({}).remove(function() {
                             console.log("seed.js - could not find user3")
                             return handleError(err);
                         }
-
-
                         var queryUser4 = User.where({
                             username: 'mitsu'
                         });
@@ -231,8 +228,6 @@ User.find({}).remove(function() {
                                 console.log("seed.js - could not find user4")
                                 return handleError(err);
                             }
-
-
                             Product.find({}).remove(function() {
                                 Product.create({
                                         userId: user_parameter1._id,
@@ -507,14 +502,8 @@ User.find({}).remove(function() {
                                                                         date: new Date()
                                                                     },
                                                                     function() {
-
                                                                     });
                                                             });
-
-
-
-
-
                                                             Address.find({}).remove(function() {
                                                                 Address.create({
                                                                         userId: user_parameter1._id,
