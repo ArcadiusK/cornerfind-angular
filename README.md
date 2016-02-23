@@ -2,4 +2,4 @@
 
 • Built with fullstack javascript Angular.js, NodeJS, MongoDB, Express.js
 
-• To run this web app type "node start" in the terminal
+• To run this web app type "node start" in the terminal. This is will run app.js from the server folder as specified in package.json file in the "scripts" section.
