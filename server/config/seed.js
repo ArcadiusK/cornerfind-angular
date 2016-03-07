@@ -170,13 +170,13 @@ User.find({}).remove(function() {
             phoneNumber: '5555555555',
             billing: {}
         }, {
-            name: 'Mitsuaki Uchimoto',
-            username: 'mitsu',
-            email: 'muchimoto@gmail.com',
+            name: 'summer',
+            username: 'summer',
+            email: '',
             password: 'ttt',
             hashedPassword: '',
             role: 'user',
-            picture: 'http://cornerfind.s3-website-us-west-2.amazonaws.com/1424062016133photo_mitsu.jpg',
+            picture: '',
             blog: '',
             description: 'Dad with 5 kids',
             provider: 'local',
