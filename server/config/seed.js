@@ -205,7 +205,7 @@ User.find({}).remove(function() {
 
 
                 var queryUser2 = User.where({
-                    username: 'davidjchang'
+                    username: 'accapulco'
                 });
                 queryUser2.findOne(function(err, user_parameter2) {
                     if (err) {
@@ -213,7 +213,7 @@ User.find({}).remove(function() {
                         return handleError(err);
                     }
                     var queryUser3 = User.where({
-                        username: 'justincohen'
+                        username: 'winter'
                     });
                     queryUser3.findOne(function(err, user_parameter3) {
                         if (err) {
@@ -221,7 +221,7 @@ User.find({}).remove(function() {
                             return handleError(err);
                         }
                         var queryUser4 = User.where({
-                            username: 'mitsu'
+                            username: 'summer'
                         });
                         queryUser4.findOne(function(err, user_parameter4) {
                             if (err) {
