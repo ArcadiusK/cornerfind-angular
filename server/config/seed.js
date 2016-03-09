@@ -417,8 +417,6 @@ User.find({}).remove(function() {
                                                                 user.listedProducts.push(product_parameter5._id);
                                                                 user.save();
                                                             })
-
-
                                                             Chat.find({}).remove(function() {
                                                                 Chat.create({
                                                                         product: product_parameter._id,
@@ -442,12 +440,12 @@ User.find({}).remove(function() {
                                                                         username: user_parameter1.username
                                                                     }, {
                                                                         product: product_parameter._id,
-                                                                        textLine: "@mitsu are you there?",
+                                                                        textLine: "@summer are you there?",
                                                                         sender: user_parameter1._id,
                                                                         username: user_parameter1.username
                                                                     }, {
                                                                         product: product_parameter._id,
-                                                                        textLine: "@justincohen check this product out",
+                                                                        textLine: "@winter check this product out",
                                                                         sender: user_parameter2._id,
                                                                         username: user_parameter2.username
                                                                     },
@@ -455,9 +453,6 @@ User.find({}).remove(function() {
                                                                         // console.log("finished seeding chats")
                                                                     });
                                                             });
-
-
-
                                                             Like.find({}).remove(function() {
                                                                 Like.create({
                                                                         productId: product_parameter._id,
@@ -470,10 +465,8 @@ User.find({}).remove(function() {
                                                                         userId: user_parameter2._id
                                                                     },
                                                                     function() {
-
                                                                     });
                                                             });
-
                                                             Review.find({}).remove(function() {
                                                                 Review.create({
                                                                         reviewingUserId: user_parameter1._id,
