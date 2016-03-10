@@ -124,13 +124,13 @@ User.find({}).remove(function() {
         },
 
         {
-            name: 'Accapulco',
-            username: 'accapulco',
+            name: 'Acapulco',
+            username: 'acapulco',
             email: '',
             password: 'ttt',
             hashedPassword: '',
             role: 'user',
-            picture: 'accapulco.jpg',
+            picture: '',
             blog: '',
             description: 'Dad with 3 kids',
             provider: 'local',
@@ -154,7 +154,7 @@ User.find({}).remove(function() {
             hashedPassword: '',
             role: 'user',
             picture: '',
-            blog: 'www.linkedin.com',
+            blog: '',
             description: 'Dad with 4 kids',
             provider: 'local',
             salt: '',
@@ -205,7 +205,7 @@ User.find({}).remove(function() {
 
 
                 var queryUser2 = User.where({
-                    username: 'accapulco'
+                    username: 'acapulco'
                 });
                 queryUser2.findOne(function(err, user_parameter2) {
                     if (err) {
