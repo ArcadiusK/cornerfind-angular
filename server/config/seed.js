@@ -90,9 +90,9 @@ Condition.find({}).remove(function() {
     }, {
         name: "Good"
     }, {
-        name: "Average"
-    }, {
         name: "Acceptable"
+    }, {
+        name: "Needs Repair"
     });
 });
 
