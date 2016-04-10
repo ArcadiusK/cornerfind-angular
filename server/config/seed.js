@@ -57,6 +57,8 @@ Brand.find({}).remove(function() {
     }, {
         name: "CTRCO"
     }, {
+        name: "Lacoste"
+    }, {
         name: "Book"
     }, {
         name: "Other"
