@@ -25,7 +25,7 @@ exports.show = function(req, res) {
 
 // Creates a new order in the DB.
 exports.create = function(req, res) {
-  console.log("HERE ",req.body)
+  console.log("HERE, new order created in database ",req.body)
   Order.create(req.body, function(err, order) {
     if(err) console.log(err)
     return res.json(201, order);
