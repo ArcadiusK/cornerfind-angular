@@ -13,6 +13,7 @@ var methodOverride = require('method-override');
 var cookieParser = require('cookie-parser');
 var errorHandler = require('errorhandler');
 var path = require('path');
+var path2 = require('path2');
 var config = require('./environment');
 var passport = require('passport');
 var session = require('express-session');
